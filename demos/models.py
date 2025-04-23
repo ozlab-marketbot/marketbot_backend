@@ -1,10 +1,5 @@
 from django.db import models
 
-<<<<<<< Updated upstream
-=======
-# 상품 모델
-
->>>>>>> Stashed changes
 class Product(models.Model):
     product_name = models.CharField("상품명", max_length=200, null=True, blank=True)
     sale_price = models.PositiveIntegerField("판매가격", null=True, blank=True)
