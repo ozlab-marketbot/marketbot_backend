@@ -26,8 +26,11 @@ SECRET_KEY = "django-insecure-qzx^n%4wd@0i@p1y%yp1xk68_j0i-uub%zcs)m1p^!9l*n*g&6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
-
+ALLOWED_HOSTS = [
+    'marketbotbackend-production.up.railway.app',
+    '127.0.0.1', 
+    'localhost',
+]
 # Application definition
 
 INSTALLED_APPS = [
