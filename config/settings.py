@@ -78,16 +78,30 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
+'''
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    #    'ENGINE': 'django.db.backends.postgresql',
-    #    'NAME': 'postgres',
-    #    'USER': 'postgres',
-    #    'PASSWORD': 'ad12',
-    #    'HOST': 'localhost',
-    #    'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',         # 로그인한 DB 이름
+        'USER': 'postgres',         # 로그인한 사용자
+        'PASSWORD': 'admin123',# 여기에는 실제 비밀번호 입력
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+'''
+# Azure DB 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',  
+        'USER': 'alphaadmin',
+        'PASSWORD': 'Helloposada1!',
+        'HOST': 'alpha-pg-server.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
