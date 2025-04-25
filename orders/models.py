@@ -25,7 +25,7 @@ class Order(models.Model):
     order_id = models.CharField(max_length=50)
     platform = models.CharField(max_length=20)
     order_date = models.DateTimeField()
-    status = models.CharField(max_length=30)
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES)
     product_name = models.CharField(max_length=200)
     quantity = models.IntegerField()
     buyer_name = models.CharField(max_length=100)

@@ -12,12 +12,14 @@ from rest_framework import status
 from .models import Order
 from .serializers import OrderSerializer
 
+# check
 @api_view(['GET'])
 def order_list(request):
     orders = Order.objects.all()
     serializer = OrderSerializer(orders, many=True)
     return Response(serializer.data)
 
+# check
 @api_view(['GET'])
 def order_detail(request, order_id):
     try:
@@ -27,7 +29,7 @@ def order_detail(request, order_id):
     except Order.DoesNotExist:
         return Response({'error': 'Order not found'}, status=status.HTTP_404_NOT_FOUND)
 
-
+# check
 @api_view(['POST'])
 def create_order(request):
     serializer = OrderSerializer(data=request.data)
@@ -38,6 +40,7 @@ def create_order(request):
 
 VALID_STATUSES = ['READY', 'IN_TRANSIT', 'DELIVERED', 'CANCELLED']
 
+# check
 @api_view(['GET', 'PATCH'])
 def order_status(request, order_id):
     try:
